@@ -1,0 +1,28 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+      enter email:<input type="email" id="mail"><br><br>
+      enter password:<input type="password" id="pwd"><br><br>
+      <button onclick="login()">login</button>
+      <a href="fp1.html">forget password</a>
+      <p id="demo"></p>
+      <script>
+          function login(){
+          var email=document.getElementById("mail").value;
+          var password=document.getElementById("pwd").value;
+          var customer=JSON.parse(localStorage.getItem("cus"));
+          for(var i=0;i<customer.length;i++){
+              if(customer[i].email==email && customer[i].password==password){
+                  localStorage.setItem("username",customer[i].username);
+                  window.location.href="db.html";
+              }
+              else{
+                  document.getElementById("demo").innerHTML="invalidcredentails";
+              }
+          }
+           }
+            </script>
+    </body>
+</html>

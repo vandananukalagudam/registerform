@@ -1,0 +1,30 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        enter name:<input type="text" id="uname"><br><br>
+        enter email:<input type="email" id="mail"><br><br>
+        enter password:<input type="password" id="pwd"><br><br>
+        <button onclick="validate()">register</button>
+       <script>
+           if(localStorage.getItem("cus")==null){
+           localStorage.setItem("cus",JSON.stringify([]));
+           }
+           function validate(){
+               var name=document.getElementById("uname").value;
+               var email=document.getElementById("mail").value;
+               var password=document.getElementById("pwd").value;
+               var customer=  {
+                   username: name,
+                   email:email,
+                   password:password
+                   };
+               var cus=JSON.parse(localStorage.getItem("cus"));
+               cus.push(customer);
+               localStorage.setItem("cus",JSON.stringify(cus));
+               window.location.href="logintask.html";
+           }
+       </script>
+    </body>
+</html>

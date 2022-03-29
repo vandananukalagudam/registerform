@@ -1,0 +1,27 @@
+<html>
+    <head></head>
+    <body>
+        <table border="1" width="100%">
+            <thead>
+                <th>name</th>
+                <th>email</th>
+                <th>password</th>
+            </thead>
+            <tbody id="tb"></tbody>
+        </table>
+            <button onclick="login()">go to list</button>
+            <script>
+                var cus=JSON.parse(localStorage.getItem("cus"));
+                var list="";
+                for(var i=0;i<cus.length;i++){
+                    var nlist=cus[i];
+                    list+="<tr>"+"<td>"+nlist.username+"</td>"+"<td>"+nlist.email+"</td>"+"<td>"+nlist.password+"</td>"+"</tr>";
+                }
+                document.getElementById("tb").innerHTML=list;
+                function login(){
+                    window.location.href="list1.html";
+                }
+            </script>
+       
+    </body>
+</html>

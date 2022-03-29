@@ -1,0 +1,35 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1 id="demo"></h1>
+        <textarea cols="20" rows="20" id="ta"></textarea>
+        <button onclick="post()">post</button>
+        <button onclick="update()">update</button><br><br>
+        <button onclick="table()">go to</button>
+        <p id="demo1"></p>
+        <script>
+            var username=localStorage.getItem("username");
+          document.getElementById("demo").innerHTML="hii"+" "+username;
+          function post(){
+              var ta=document.getElementById("ta").value;
+              localStorage.setItem("post",ta);
+          }
+          function update(){
+              var post=localStorage.getItem("post");
+              document.getElementById("demo1").innerHTML=post+" "+date1();
+            //   var p=localStorage.setItem("update",p);
+          }
+          function date1(){
+              var d=new Date();
+              date=d.toLocaleDateString();
+              time=d.toLocaleTimeString();
+              return date+" "+time;
+          }
+          function table(){
+              window.location.href="table1.html";
+          }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+      enter email:<input type="email" id="mail"><br><br>
+      <button onclick="gp()">get password</button>
+      <button onclick="lo()">logout</button>
+      <p id="demo"></p>
+      <script>
+          function gp(){
+          var email=document.getElementById("mail").value;
+          var cus=JSON.parse(localStorage.getItem("cus"));
+          for(var i=0;i<cus.length;i++){
+              if(cus[i].email==email){
+                  var  password=cus[i].password;
+                  document.getElementById("demo").innerHTML=password;
+              }
+          }
+        }
+        function lo(){
+            window.location.href="logintask.html";
+        }
+      </script>
+    </body>
+</html>

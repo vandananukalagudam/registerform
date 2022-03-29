@@ -1,0 +1,15 @@
+<html>
+    <head></head>
+    <body>
+        <ul id="ul"></ul>
+        <script>
+            var cus=JSON.parse(localStorage.getItem("cus"));
+            var list="";
+            for(var i=0;i<cus.length;i++){
+                var nlist=cus[i];
+                list+="<li>"+nlist.username+"&nbsp;&nbsp;"+nlist.email+"&nbsp;&nbsp;"+nlist.password+"</li>";
+            }
+            document.getElementById("ul").innerHTML=list;
+        </script>
+    </body>
+</html>
